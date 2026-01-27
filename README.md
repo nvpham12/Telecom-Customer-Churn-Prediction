@@ -58,17 +58,6 @@ Identify customer attributes and behaviors associated with churn to support rete
 - Built predictive models to validate churn signals and feature importance
 - Delivered insights via visualizations and an interactive Tableau dashboard
 
-## Project Limitations & Mitigations
-- **Review timing:** Reviews aren’t necessarily left at the time of purchase.
-  - **Mitigation:** Used review dates from verified customers as a proxy for purchase dates to compute recency.  
-- **Volunteer bias:** Not all customers leave reviews; analysis reflects only engaged, reviewing customers.  
-- **Frequency calculation:** Does not account for multiple quantities per purchase.  
-- **Monetary value estimation:** Prices of reviewed products may not reflect actual amounts paid due to discounts or price changes.
-  - **Mitigation:** Used product prices at the time of scraping as a proxy for spending.  
-- **Subset of customers:** Only verified reviewers are included. Analysis focuses on this engaged subset.  
-- **Missing purchase info:** Data lacks actual purchase amounts and dates.
-  - **Mitigation:** Review dates and product prices serve as proxies to approximate recency, frequency, and monetary features for RFM analysis.
-
 ---
 
 # Data
