@@ -1,60 +1,80 @@
 # Project Background
 This project demonstrates data analytics and customer churn prediction using synthetic telecom data with the XGBoost algorithm. Data visualization was completed using Seaborn and Matplotlib. An interactive dashboard was created using Tableau.
 
-## Links
-### Data Analytics
-- [Data Analytics Jupyter Notebook](https://github.com/nvpham12/Telecom-Customer-Churn-Prediction-and-Analysis/blob/main/Data%20Analysis%20Telecom%20Customer%20Churn.ipynb)
-- [Full Data Analytics Report](https://github.com/nvpham12/Telecom-Customer-Churn-Prediction-and-Analysis/blob/main/Analytics%20Report.md)
-### Churn Prediction
-- [Data Cleaning and Churn Prediction Jupyter Notebook](https://github.com/nvpham12/Telecom-Customer-Churn-Prediction-and-Analysis/blob/main/Churn%20Prediction%20Telecom%20Customers.ipynb)
-- [Churn Prediction Model Technical Report](https://github.com/nvpham12/Telecom-Customer-Churn-Prediction/blob/main/Technical%20Report.md)
-### Tableau Dashboard
-- [Tableau Dashboard](https://public.tableau.com/views/TelecomCustomerChurnDashboard_17551339538610/Dashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+## Business Objective:
+Identify customer attributes and behaviors associated with churn to support retention strategies and improve customer experience.
 
-## Tools & Technologies
-- **Pandas** – data manipulation, cleaning, and exporting cleaned data
-- **NumPy** - data transformation
-- **Matplotlib / Seaborn** – EDA and visualizations
-- **Scikit-learn** – data preprocessing and model evaluation
-- **XGBoost** – tree-based classification and feature importance visualization
-- **GridSearchCV** – hyperparameter tuning
-- **Imbalanced-learn (imblearn)** - data balancing via SMOTE
-- **Tableau** – interactive dashboarding
-
-## Approach
-- Cleaned and transformed synthetic churn dataset: handled missing values, changed data types, encoded categorical features, and transformed skewed distributions.
-- Trained XGBoost models: baseline, hyperparameter-tuned, and SMOTE-balanced for class imbalance.
-- Used Matplotlib and Seaborn to generate visualizations that show churn patterns and customer distributions.
-- Interpreted the visualizations, documenting and delivering actionable insights and recommendations.
-- Built a Tableau dashboard to visualize churn by tenure, contract type, and other features.
-
-## Data
-- The data contains information on telecom customer churn and contains 7043 rows and 21 columns.
-- Columns include customer demographics and add-on services also offered by the company.
-- The data is synthetic, made and shared by IBM.
+## Key Business Questions
+- Which customer segments are most likely to churn?
+- When in the customer lifecycle does churn most frequently occur?
+- Which products, services, or contract types are most strongly associated with churn?
+- Which customer groups should be prioritized for retention investment?
 
 ---
 
 # Executive Summary
 ## Insights
-- Customers with Monthly Charges ranging from \$75-\$100 are the most numerous and have the highest churn rates.
-- The monthly charge brackets may represent different customer segments for targeted retention strategies.
-- Most of the company's customers are new customers, making onboarding experiences very significant to reducing churn.
-- Those on Month-to-Month contracts have around 14 times the churn rate of those on Two-Year contracts and around 4 times the churn rate of those on One-Year contracts.
-- Around 89% of churning customers are on Month-to-Month contracts.
-- Customers using the electronic payment method have higher churn rates than other payment method, which may indicate serious technical issues, poor user interface for inputting information, or lack of security for the payment method.
-- Customers using the Online Security service or Tech Support have lower churn rates than those who do not use them.
+- Month-to-month customers account for ~89% of churn, despite representing just over half of total customers.
+- Customers in the $75–$100 monthly charge range are both the largest segment and the highest churn group.
+- Churn risk is highest in the first 1–2 months of tenure, indicating early lifecycle vulnerability.
+- Customers with Online Security or Tech Support have materially lower churn rates.
+- Senior citizens churn at roughly twice the rate of non-seniors.
 
 ## Recommendations
-- Since customers tend to churn significantly more after their first month, the company should prioritize deals and promotions that lock the customer into a 1-Year or 2-Year contract. Developing a strong onboarding experience and engaging new customers is very important.
-- The company can offer customers discounted or free phones or discounts through statement credits to win over new customers, while locking them into longer contracts, which have significantly lower churn rates.
-- Promote add-ons and other services, especially the online security add-on. Investigate potential technical issues with the electronic payment system and encourage customers to use tech support when necessary.
-- Develop targeted strategies for different customer segments, such as those with different levels of monthly spending.
-- Customers without dependents have higher churn rates than those that do. Consider reducing single line prices or providing other offers to those with single lines to incentivize adding more lines.
+- Target early-tenure customers (0–90 days) with contract-upgrade incentives (e.g., bill credits or device discounts) to shift month-to-month customers into 1-year plans and reduce early churn.
+- Bundle Online Security and Tech Support into higher-churn plans, testing whether bundled adoption reduces churn relative to standalone pricing.
+- Audit the electronic payment experience (error rates, failed payments, support tickets) and encourage alternative payment methods until issues are resolved.
+- Introduce senior-specific retention offers, such as simplified plans or loyalty discounts, and track churn rate changes within this segment.
+
+## Proposed Success Metrics
+- Overall churn rate
+- Early-tenure churn (first 1–3 months)
+- Contract upgrade conversion rate
+- Add-on service adoption rates
 
 ---
 
-# Data Source and License
+# Links
+## Data Analytics
+- [Data Analytics Jupyter Notebook](https://github.com/nvpham12/Telecom-Customer-Churn-Prediction-and-Analysis/blob/main/Data%20Analysis%20Telecom%20Customer%20Churn.ipynb)
+- [Full Data Analytics Report](https://github.com/nvpham12/Telecom-Customer-Churn-Prediction-and-Analysis/blob/main/Analytics%20Report.md)
+## Churn Prediction
+- [Data Cleaning and Churn Prediction Jupyter Notebook](https://github.com/nvpham12/Telecom-Customer-Churn-Prediction-and-Analysis/blob/main/Churn%20Prediction%20Telecom%20Customers.ipynb)
+- [Churn Prediction Model Technical Report](https://github.com/nvpham12/Telecom-Customer-Churn-Prediction/blob/main/Technical%20Report.md)
+## Tableau Dashboard
+- [Tableau Dashboard](https://public.tableau.com/views/TelecomCustomerChurnDashboard_17551339538610/Dashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+---
+
+# Tools & Technologies
+- Python (Pandas, scikit-learn, XGBoost)
+- Matplotlib/Seaborn
+- Tableau
+
+---
+
+# Approach
+- Performed exploratory analysis to identify churn drivers and high-risk segments
+- Built predictive models to validate churn signals and feature importance
+- Delivered insights via visualizations and an interactive Tableau dashboard
+
+## Project Limitations & Mitigations
+- **Review timing:** Reviews aren’t necessarily left at the time of purchase.
+  - **Mitigation:** Used review dates from verified customers as a proxy for purchase dates to compute recency.  
+- **Volunteer bias:** Not all customers leave reviews; analysis reflects only engaged, reviewing customers.  
+- **Frequency calculation:** Does not account for multiple quantities per purchase.  
+- **Monetary value estimation:** Prices of reviewed products may not reflect actual amounts paid due to discounts or price changes.
+  - **Mitigation:** Used product prices at the time of scraping as a proxy for spending.  
+- **Subset of customers:** Only verified reviewers are included. Analysis focuses on this engaged subset.  
+- **Missing purchase info:** Data lacks actual purchase amounts and dates.
+  - **Mitigation:** Review dates and product prices serve as proxies to approximate recency, frequency, and monetary features for RFM analysis.
+
+---
+
+# Data
+Synthetic telecom customer dataset (7,043 rows, 21 features) including demographics, services, and contract details (IBM).
+
+## Data Source and License
 - Dataset: Telco Customer Churn
 - Authors: scottdangelo
 - Source: [IBM](https://github.com/IBM/telco-customer-churn-on-icp4d)
