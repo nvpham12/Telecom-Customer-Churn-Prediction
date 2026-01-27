@@ -53,29 +53,7 @@ Identify customer attributes and behaviors associated with churn to support rete
 - The data is synthetic, made and shared by IBM.
 
 ## Schema
-| Field Name         | Type     |
-|--------------------|----------|
-| CustomerID         | object   |
-| Gender             | object   |
-| SeniorCitizen      | int64    |
-| Partner            | object   |
-| Dependents         | object   |
-| Tenure             | int64    |
-| PhoneService       | object   |
-| MultipleLines      | object   |
-| InternetService    | object   |
-| OnlineSecurity     | object   |
-| OnlineBackup       | object   |
-| DeviceProtection   | object   |
-| TechSupport        | object   |
-| StreamingTV        | object   |
-| StreamingMovies    | object   |
-| Contract           | object   |
-| PaperlessBilling   | object   |
-| PaymentMethod      | object   |
-| MonthlyCharges     | float64  |
-| TotalCharges       | object   |
-| Churn              | object   |
+Full schema available in appendix
 
 ## Data Source and License
 - Dataset: Telco Customer Churn
@@ -231,3 +209,31 @@ Identify customer attributes and behaviors associated with churn to support rete
 
 # Tableau Dashboard Preview
 <img width="1635" height="1090" alt="Dashboard" src="https://github.com/user-attachments/assets/2a765d0e-ce9c-4884-8674-cb68bf8af24e" />
+
+---
+
+# Appendix
+## Data Schema
+| Field Name         | Type     |
+|--------------------|----------|
+| CustomerID         | object   |
+| Gender             | object   |
+| SeniorCitizen      | int64    |
+| Partner            | object   |
+| Dependents         | object   |
+| Tenure             | int64    |
+| PhoneService       | object   |
+| MultipleLines      | object   |
+| InternetService    | object   |
+| OnlineSecurity     | object   |
+| OnlineBackup       | object   |
+| DeviceProtection   | object   |
+| TechSupport        | object   |
+| StreamingTV        | object   |
+| StreamingMovies    | object   |
+| Contract           | object   |
+| PaperlessBilling   | object   |
+| PaymentMethod      | object   |
+| MonthlyCharges     | float64  |
+| TotalCharges       | object   |
+| Churn              | object   |
