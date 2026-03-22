@@ -32,6 +32,9 @@ Identify customer attributes and behaviors associated with churn to support rete
 - Contract upgrade conversion rate
 - Add-on service adoption rates
 
+## Limitations
+- Assumes the business does not have a free 1 month trial for customers, which determines imputation of missing monthly charges.
+
 ---
 
 # Tools & Technologies
@@ -65,7 +68,8 @@ Full schema available in appendix
 ---
 
 ## Approach
-- Cleaned and transformed synthetic churn dataset: handled missing values, changed data types, encoded categorical features, and transformed skewed distributions. 
+- Cleaned and transformed synthetic churn dataset: changed data types, encoded categorical features, and transformed skewed distributions.
+- Handled missing values by imputing with monthly charges with total charges since missing monthly charges were only for customers on their first month of tenure (assumes there is no free 1 month trial). 
 - The data used for the analytics notebook was a previously cleaned copy. The code for data cleaning is in the Churn Prediction Model Jupyter Notebook file.
 - Used Matplotlib and Seaborn to generate visualizations that show churn patterns and customer distributions.
 - Interpreted the visualizations, documenting and delivering actionable insights and recommendations.
