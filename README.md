@@ -32,6 +32,8 @@ Identify customer attributes and behaviors associated with churn to support rete
 - Contract upgrade conversion rate
 - Add-on service adoption rates
 
+## Limitations
+- Assumes the business does not offer free 1 month trials to customers.
 ---
 
 # Links
